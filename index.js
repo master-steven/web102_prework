@@ -43,7 +43,20 @@ function addGamesToPage(games) {
         // about each game
         // TIP: if your images are not displaying, make sure there is space
         // between the end of the src attribute and the end of the tag ("/>")
-
+        <h1>Name: {item.name}</h1>
+        <h2>Description: </h2><p>{item.description}</p>
+        <h3>Pledged: {item.pledged}</h3>
+        <h3>Goal: {item.goal}</h3>
+        <h3>Backers: {item.backers}</h3>
+        <img src={item.src} alt={item.alt></h3>
+        
+        <p>"name": "Heroes Of Mythic Americas",
+    "description": "An exciting 5e RPG supplement that heroically represents pre-Columbian American cultures and mythologies",
+    "pledged": 1572,
+    "goal": 10000,
+    "backers": 9,
+    "img": "./assets/heroes_of_mythic_americas.png"
+  },
 
         // append the game to the games-container
 
