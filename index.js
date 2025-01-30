@@ -5,16 +5,20 @@
 */
 
 // import the JSON data about the crowd funded games from the games.js file
-import games from './games.js'
-import GAMES_DATA from './games.js';
+import GAMES_JSON from '/games.js';
+
+
 
 // create a list of objects to store the data about the games using JSON.parse
-const GAMES_JSON = JSON.parse(GAMES_DATA)
+//const document = JSON.parse(GAMES_JSON);
+const head = JSON.parse(GAMES_JSON);
 
 // remove all child elements from a parent element in the DOM
-function deleteChildElements(parent) {
-    while (parent.firstChild) {
-        parent.removeChild(parent.firstChild);
+function deleteChildElements(parent) 
+{
+    while (parent.firstChild || parent.children==null) 
+    {
+      parentElement.removeChild(parentElement.firstChild);
     }
 }
 
@@ -24,36 +28,71 @@ function deleteChildElements(parent) {
 */
 
 // grab the element with the id games-container
-const gamesContainer = document.getElementById("games-container");
+selector = document.querySelector("#games-container");
+
+
+        item.classList.class = "game-card";
+
+document.querySelector(games-list)
+
 
 // create a function that adds all data from the games array to the page
 function addGamesToPage(games) {
 
+   // var head = ...;
+    
+    
+    title = '<h1><em>Our Games</em></h1>';
+
     // loop over each item in the data
-    for(let i = 0; i < games.length; i++) {
-        const game = games[i];
-        console.log(game);    
+    for(let count = 0; i < games.length; i++) 
+    {
+        let item = games[i];
+        //selector = game;
+        
+        console.log(item);    
 
+
+        
+        
         // create a new div element, which will become the game card
-        const gameCard = document.createElement('div');
 
-        // add the class game-card to the list
-        gameCard.classList.add('game-card');
+        document.createElement("div");
+        
+        
+        // add the class game-card to the list - Decided to doing on-end function state
+        
+        let list = typeof(item);
+        list.append(item);
 
+        
+        item.classList.class = "game-card";
+        games.appendChild(item);
+
+        
         // set the inner HTML using a template literal to display some info 
         // about each game
         // TIP: if your images are not displaying, make sure there is space
-        // between the end of the src attribute and the end of the tag ("/>")
-        gameCard.innerHTML = `
-            <img src="${game.img}" class="game-img" alt="${game.name}">
-            <h3>${game.name}</h3>
-            <p>${game.description}</p>
-            <p><strong>Goal:</strong> $${game.goal}</p>
-            <p><strong>Pledged:</strong> $${game.pledged}</p>    
+        // between the end of the src attribute and the end of the tag ("/>") 
+            item.innerHTML = `
+                <img src="${item.img}" class="game-img" alt="${item.name}">
+                <h3>${item.name}</h3>
+                <p>${item.description}</p>
+                <p><em>Goal:</em>$ + ${item.goal}</p>
+                <p><strong>Pledged:</strong>$+ ${item.pledged}</p>    
         `;
 
+
         // append the game to the games-container
-        gamesContainer.appendChild(gameCard);
+        game.appendChild(games-container);
+
+
+        //document.add(game); - To allow a function to modify the DOM, or to not allow a function to modify the DOM, directly?🤔Hmmm...
+
+
+
+        item.classList.class = "game-card";
+
     }    
 }
 
